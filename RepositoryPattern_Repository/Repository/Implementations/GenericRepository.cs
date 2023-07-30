@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RepositoryPattern_Repository.Data;
 using RepositoryPattern_Repository.Repository.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryPattern_Repository.Repository.Implementations
 {
@@ -32,6 +27,11 @@ namespace RepositoryPattern_Repository.Repository.Implementations
         public void DeleteRanage(IEnumerable<T> entities)
         {
             _dbSet.RemoveRange(entities);
+        }
+
+        public void Delete(T entity)
+        {
+            _dbSet.Remove(entity);
         }
     }
 }
